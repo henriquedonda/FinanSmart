@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(./images/Img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-success {
+    color: #28a745 !important;
+    font-weight: 600;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    width: 100%;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.footer{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_2{
+    text-align: center;
+}
+
+.form-group{
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.form-check{
+    margin-top: 5px;
+}
+
+.terms{
+    width: 75%;
+    margin: 35px auto;
+    font-weight: 400;
+    text-align: center;
+    background-color: #e3f2e1;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.texto{
+    margin-top: 50px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.title{
+    font-weight: 600; 
+}
+
+.politica{
+    margin-top: 50px;
+}

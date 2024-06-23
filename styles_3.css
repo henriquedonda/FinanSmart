@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ddfcd9;
+}
+
+.terms{
+    width: 75%;
+    margin: 35px auto;
+    font-weight: 400;
+    text-align: center;
+    background-color: #e3f2e1;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.texto{
+    margin-top: 50px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.title{
+    font-weight: 600; 
+}
+
+.politica{
+    margin-top: 50px;
+}
