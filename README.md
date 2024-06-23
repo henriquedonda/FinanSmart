@@ -10,3 +10,7 @@ Relatórios: Visualize relatórios detalhados sobre suas finanças.
 Gráficos e Estatísticas: Apresentação visual dos seus dados financeiros para melhor entendimento.
 Alertas e Notificações: Receba alertas sobre datas de vencimento, limites de orçamento, etc.
 Segurança: Acesso seguro com autenticação e autorização de usuários.
+
+- Ao Digitar algum e-mail fictício e senha, você é redirecionado para a tela de gestão ( ainda em desenvolvimento )
+- Ao clicar em Criar conta, você é redirecionado a página de cadastro.
+- Ao clicar em Termos de uso/Políticas de Privacidade você será redirecionado aos termos do Site.
