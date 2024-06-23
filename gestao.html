@@ -66,65 +66,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal Adicionar Entrada -->
-    <div class="modal fade" id="entradaModal" tabindex="-1" aria-labelledby="entradaModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="entradaModalLabel">Adicionar Entrada</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="entradaForm">
-                        <div class="mb-3">
-                            <label for="entradaDescricao" class="form-label">Descrição</label>
-                            <input type="text" class="form-control" id="entradaDescricao" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="entradaValor" class="form-label">Valor</label>
-                            <input type="number" class="form-control" id="entradaValor" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="entradaData" class="form-label">Data</label>
-                            <input type="date" class="form-control" id="entradaData" required>
-                        </div>
-                        <button type="submit" class="btn btn-success">Adicionar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Adicionar Saída -->
-    <div class="modal fade" id="saidaModal" tabindex="-1" aria-labelledby="saidaModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="saidaModalLabel">Adicionar Saída</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="saidaForm">
-                        <div class="mb-3">
-                            <label for="saidaDescricao" class="form-label">Descrição</label>
-                            <input type="text" class="form-control" id="saidaDescricao" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="saidaValor" class="form-label">Valor</label>
-                            <input type="number" class="form-control" id="saidaValor" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="saidaData" class="form-label">Data</label>
-                            <input type="date" class="form-control" id="saidaData" required>
-                        </div>
-                        <button type="submit" class="btn btn-danger">Adicionar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         // Dados iniciais
         const entradas = [
@@ -140,64 +81,6 @@
             { descricao: "Internet", valor: 100, data: "2024-06-20" },
             { descricao: "Lazer", valor: 500, data: "2024-06-25" }
         ];
-
-        // Função para atualizar o resumo mensal
-        function atualizarResumoMensal() {
-            const totalEntradas = entradas.reduce((total, entrada) => total + entrada.valor, 0);
-            const totalSaidas = saidas.reduce((total, saida) => total + saida.valor, 0);
-            const saldoMensal = totalEntradas - totalSaidas;
-
-            document.getElementById("total-entradas").innerHTML = `Total de Entradas: <strong>R$ ${totalEntradas.toFixed(2)}</strong>`;
-            document.getElementById("total-saidas").innerHTML = `Total de Saídas: <strong>R$ ${totalSaidas.toFixed(2)}</strong>`;
-            document.getElementById("saldo-mensal").innerHTML = `Saldo: <strong>R$ ${saldoMensal.toFixed(2)}</strong>`;
-        }
-
-        // Função para adicionar uma nova entrada
-        document.getElementById("entradaForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-            const descricao = document.getElementById("entradaDescricao").value;
-            const valor = parseFloat(document.getElementById("entradaValor").value);
-            const data = document.getElementById("entradaData").value;
-            entradas.push({ descricao, valor, data });
-            atualizarLista("entradas-list", entradas);
-            atualizarResumoMensal();
-            document.getElementById("entradaForm").reset();
-            bootstrap.Modal.getInstance(document.getElementById('entradaModal')).hide();
-        });
-
-        // Função para adicionar uma nova saída
-        document.getElementById("saidaForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-            const descricao = document.getElementById("saidaDescricao").value;
-            const valor = parseFloat(document.getElementById("saidaValor").value);
-            const data = document.getElementById("saidaData").value;
-            saidas.push({ descricao, valor, data });
-            atualizarLista("saidas-list", saidas);
-            atualizarResumoMensal();
-            document.getElementById("saidaForm").reset();
-            bootstrap.Modal.getInstance(document.getElementById('saidaModal')).hide();
-        });
-
-        // Função para atualizar a lista de entradas ou saídas
-        function atualizarLista(elementId, lista) {
-            const ul = document.getElementById(elementId);
-            ul.innerHTML = "";
-            lista.forEach(item => {
-                const li = document.createElement("li");
-                li.className = "list-group-item";
-                li.textContent = `${item.descricao}: R$ ${item.valor.toFixed(2)} `;
-                const span = document.createElement("span");
-                span.className = "text-muted";
-                span.textContent = `(${item.data})`;
-                li.appendChild(span);
-                ul.appendChild(li);
-            });
-        }
-
-        // Inicializar a lista de entradas e saídas
-        atualizarLista("entradas-list", entradas);
-        atualizarLista("saidas-list", saidas);
-        atualizarResumoMensal();
 
         // Gráfico de Desempenho
         const ctx = document.getElementById('desempenhoChart').getContext('2d');
