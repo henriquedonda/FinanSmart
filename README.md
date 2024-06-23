@@ -1,4 +1,4 @@
-#FinanSmart
+**FinanSmart**
 
 Sistema de Gestão Financeira
 Este repositório contém um sistema web para gestão financeira desenvolvido utilizando [HTML/CSS com Bootstrap framework].
